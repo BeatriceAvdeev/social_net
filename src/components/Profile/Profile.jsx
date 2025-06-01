@@ -1,5 +1,6 @@
 import "./profile.css"
-import ava from "./img/cat.png"
+import Posts from "../Posts/Posts";
+import ava from "../../img/cat.png"
 
 function Profile() {
     return (
@@ -8,15 +9,7 @@ function Profile() {
                 <img src={ava} alt="" />
                 <p>John Dow</p>
             </div>
-            <div className="posts">
-                <input type="text" placeholder="enter the post"/>
-                <button>add post</button>
-                <div className="post">
-                    <img src={ava} alt="" />
-                    <span>John Dow</span>
-                    <p>some text</p>
-                </div>
-            </div>
+            <Posts />
         </div>
     )
 }

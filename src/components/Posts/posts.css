@@ -1,0 +1,36 @@
+.posts{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.posts input{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.posts button{
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+.post{
+    margin-bottom: 20px;
+    color: white;
+}
+
+.post img{
+    width: 10%;
+    border-radius: 50%;
+}
+
+.post span{
+    margin-left: 20px;
+}
+
+.post p{
+    margin-top: 10px;
+
+}
