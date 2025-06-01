@@ -1,0 +1,28 @@
+.navbar {
+    background-color: #5353e0;
+    border-radius: 20px;
+    grid-area: n;
+    padding: 15px;  
+}
+
+.nav-item a{
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.nav-item{
+    list-style: none;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    transition: .2s;
+}
+
+.nav-item:hover{
+    background-color:#919fb7 ;
+}
+
+.nav-item:hover a{
+    color: #5353e0;
+}

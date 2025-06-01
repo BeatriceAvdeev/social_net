@@ -1,0 +1,12 @@
+.logo {
+    height: 100%;
+
+}
+
+.header {
+    background-color: rgb(83, 83, 224);
+    border-radius: 20px;
+    height: 100px;
+    padding: 20px;
+    grid-area: h;
+}
