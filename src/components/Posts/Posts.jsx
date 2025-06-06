@@ -7,11 +7,11 @@ function Posts() {
         <div className="posts">
             <input type="text" placeholder="enter the post" />
             <button>add post</button>
-            <Post />
-            <Post />
-            <Post />
+            <Post message="hello world" name='John Dow' />
+            <Post message="i am cat" name="John Dow" />
+            <Post message='lets sing' name='John Dow' />
         </div>
     )
 }
 
-export default Posts;
+export default Posts;       

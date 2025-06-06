@@ -1,12 +1,12 @@
 import "./post.css"
 import ava from "../../img/cat.png"
 
-function Post (){
+function Post (props){
     return(
          <div className="post">
                 <img src={ava} alt="" />
-                <span>John Dow</span>
-                <p>some text</p>
+                <span>{props.name}</span>
+                <p>{props.message}</p>
             </div>
     )
 }
