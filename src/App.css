@@ -19,3 +19,9 @@ body{
   gap: 15px;
   grid-template-columns: 3fr 9fr;
 }   
+
+.content{
+   background-color: rgb(83, 83, 224);
+    border-radius: 20px;
+    grid-area: p;
+}

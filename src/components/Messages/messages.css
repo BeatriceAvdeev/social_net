@@ -1,0 +1,23 @@
+.messages{
+    padding: 20px;
+
+}
+
+.message{
+    display: flex;
+    margin-bottom: 10px;
+
+}
+
+.name{
+    width: 20%;
+    font-weight: 700;
+    padding: 5px;
+}
+
+.message-text{
+    width: 80%;
+    background: #919fb7;    
+    padding: 5px; 
+    border-radius: 10px;
+}

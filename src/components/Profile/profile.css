@@ -1,8 +1,5 @@
-.profile {
-    background-color: rgb(83, 83, 224);
-    border-radius: 20px;
-    grid-area: p;
-}
+.profile {}
+   
 
 .me{
     padding: 20px;
