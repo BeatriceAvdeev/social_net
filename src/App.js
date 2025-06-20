@@ -6,7 +6,9 @@ import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import { BrowserRouter,Routes,Route} from 'react-router';
 
-function App() {
+
+
+function App(props) {
   return (
     <div className='wrapper'>
       <BrowserRouter>
@@ -16,7 +18,7 @@ function App() {
           <Routes>
             <Route index element={<Profile />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="messages" element={<Messages />} />
+            <Route path="messages" element={<Messages messagesText={props.messagesText} />} />
           </Routes>
         </div>
       </BrowserRouter>
