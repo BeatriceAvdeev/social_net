@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
-import { BrowserRouter,Routes,Route} from 'react-router';
+import { BrowserRouter, Routes, Route } from 'react-router';
 
 
 
@@ -16,9 +16,9 @@ function App(props) {
         <NavBar />
         <div className='content'>
           <Routes>
-            <Route index element={<Profile />} />
-            <Route path="profile" element={<Profile />} />
-            <Route path="messages" element={<Messages messagesText={props.messagesText} />} />
+            <Route index element={<Profile profilePage={props.state.profilePage} />} />
+            <Route path="profile" element={<Profile profilePage={props.state.profilePage} />} />
+            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} />} />
           </Routes>
         </div>
       </BrowserRouter>
