@@ -11,12 +11,25 @@ let state = {
 
     profilePage: {
         postsText: [
-            { name: 'John Dow', message: 'hello world', id: 1 },
-            { name: 'John Dow', message: 'i am cat', id: 2 },
-            { name: 'John Dow', message: 'lets sing', id: 3 }
+            { name: 'John Dow', message: 'hello world', id: 1,likes: 7 },
+            { name: 'John Dow', message: 'i am cat', id: 2, likes: 3 },
+            { name: 'John Dow', message: 'lets sing', id: 3, likes: 4 }
         ],
+        
     }
 
 }
 
 export default state;
+
+export let addPost = (postText) =>{
+    let newPost={
+        name: "John Dow",
+        message: postText,
+        id: 4,
+        likes: 9
+    }
+    state.profilePage.postsText.push(newPost)
+    console.log(state);
+    
+}
