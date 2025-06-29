@@ -5,7 +5,6 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Messages';
 import { BrowserRouter, Routes, Route } from 'react-router';
-import { addPost } from './Data/state';
 
 
 
@@ -17,9 +16,9 @@ function App(props) {
         <NavBar />
         <div className='content'>
           <Routes>
-            <Route index element={<Profile profilePage={props.state.profilePage} addPost={addPost} />} />
-            <Route path="profile" element={<Profile profilePage={props.state.profilePage} addPost={addPost} />} />
-            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} />} />
+            <Route index element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} />} />
+            <Route path="profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} />} />
+            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} />} />
           </Routes>
         </div>
       </BrowserRouter>

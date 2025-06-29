@@ -1,4 +1,4 @@
-
+import rerenderTree from "../render";
 
 let state = {
     messagesPage: {
@@ -11,25 +11,40 @@ let state = {
 
     profilePage: {
         postsText: [
-            { name: 'John Dow', message: 'hello world', id: 1,likes: 7 },
+            { name: 'John Dow', message: 'hello world', id: 1, likes: 7 },
             { name: 'John Dow', message: 'i am cat', id: 2, likes: 3 },
             { name: 'John Dow', message: 'lets sing', id: 3, likes: 4 }
         ],
-        
+
     }
 
 }
 
 export default state;
 
-export let addPost = (postText) =>{
-    let newPost={
+export let addPost = (postText) => {
+    let postsText = state.profilePage.postsText
+    let newPost = {
         name: "John Dow",
         message: postText,
-        id: 4,
+        id: postsText.length + 1,
         likes: 9
     }
-    state.profilePage.postsText.push(newPost)
+    postsText.unshift(newPost)
+    rerenderTree(state)
+    console.log(postsText);
+
+
+}
+
+export let addMessage = (messageText) => {
+    let messagesText = state.messagesPage.messagesText
+    let newMessage = {
+        name: "John Dow",
+        message: messageText,
+        id: messagesText.length+1
+    }
+    messagesText.unshift(newMessage)
     console.log(state);
-    
+    rerenderTree(state)
 }

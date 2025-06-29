@@ -1,12 +1,18 @@
 import "./messages.css"
 import Message from "../Message/Massage";
+import { createRef } from "react";
 
+let messageText = createRef()
 function Messages(props) {
+    let addMessage= () => {
+        props.addMessage(messageText.current.value)
+        messageText.current.value=""
+    }
     return (
         <div className="messages">
             {props.messagesPage.messagesText.map(e => <Message message={e.message} name={e.name} id={e.id} />)}
-            <input type="text" placeholder="type your message" />
-            <button>send</button>
+            <input type="text" ref={messageText} placeholder="type your message" />
+            <button onClick={addMessage}>send</button>
         </div>
     )
 }
