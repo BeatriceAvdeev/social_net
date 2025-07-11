@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 
 
 function App(props) {
+  
   return (
     <div className='wrapper'>
       <BrowserRouter>
@@ -16,9 +17,9 @@ function App(props) {
         <NavBar />
         <div className='content'>
           <Routes>
-            <Route index element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} />} />
-            <Route path="profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} />} />
-            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} />} />
+            <Route index element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} onPostChange={props.onPostChange} />} />
+            <Route path="profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} onPostChange={props.onPostChange}/>} />
+            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} onMessageChange={props.onMessageChange} />} />
           </Routes>
         </div>
       </BrowserRouter>

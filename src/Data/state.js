@@ -7,6 +7,7 @@ let state = {
             { name: 'Ivan Ivanov', message: 'iam tierd', id: 2 },
             { name: 'Petya', message: 'want a coffee', id: 3 }
         ],
+        newMessageText: "",
     },
 
     profilePage: {
@@ -15,8 +16,9 @@ let state = {
             { name: 'John Dow', message: 'i am cat', id: 2, likes: 3 },
             { name: 'John Dow', message: 'lets sing', id: 3, likes: 4 }
         ],
-
+        newPostText:"",
     }
+
 
 }
 
@@ -31,11 +33,21 @@ export let addPost = (postText) => {
         likes: 9
     }
     postsText.unshift(newPost)
+    state.profilePage.newPostText=""
     rerenderTree(state)
-    console.log(postsText);
 
 
 }
+export let onPostChange =(text) => {
+    state.profilePage.newPostText= text
+    rerenderTree(state)
+}
+
+export let onMessageChange = (text) => {
+    state.messagesPage.newMessageText = text
+    rerenderTree(state)
+}
+
 
 export let addMessage = (messageText) => {
     let messagesText = state.messagesPage.messagesText
@@ -45,6 +57,6 @@ export let addMessage = (messageText) => {
         id: messagesText.length+1
     }
     messagesText.unshift(newMessage)
-    console.log(state);
+    state.messagesPage.newMessageText = ""
     rerenderTree(state)
 }
