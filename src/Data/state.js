@@ -1,4 +1,4 @@
-import rerenderTree from "../render";
+
 
 let state = {
     messagesPage: {
@@ -16,14 +16,20 @@ let state = {
             { name: 'John Dow', message: 'i am cat', id: 2, likes: 3 },
             { name: 'John Dow', message: 'lets sing', id: 3, likes: 4 }
         ],
-        newPostText:"",
+        newPostText: "",
     }
 
 
 }
 
 export default state;
+let rerenderTree = () => {
+    console.log("its fake function");
+}
 
+export let subscribe = (observer) => {
+    rerenderTree = observer
+}
 export let addPost = (postText) => {
     let postsText = state.profilePage.postsText
     let newPost = {
@@ -33,13 +39,13 @@ export let addPost = (postText) => {
         likes: 9
     }
     postsText.unshift(newPost)
-    state.profilePage.newPostText=""
+    state.profilePage.newPostText = ""
     rerenderTree(state)
 
 
 }
-export let onPostChange =(text) => {
-    state.profilePage.newPostText= text
+export let onPostChange = (text) => {
+    state.profilePage.newPostText = text
     rerenderTree(state)
 }
 
@@ -54,9 +60,11 @@ export let addMessage = (messageText) => {
     let newMessage = {
         name: "John Dow",
         message: messageText,
-        id: messagesText.length+1
+        id: messagesText.length + 1
     }
     messagesText.unshift(newMessage)
     state.messagesPage.newMessageText = ""
     rerenderTree(state)
 }
+
+window.state = state
