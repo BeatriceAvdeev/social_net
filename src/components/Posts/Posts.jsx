@@ -8,12 +8,12 @@ let postText = React.createRef()
 function Posts(props) {
     let addPost = () => {
         props.addPost(postText.current.value)
-        postText.current.value=""
+        postText.current.value = ""
     }
     let onPostChange = () => {
         props.onPostChange(postText.current.value)
     }
-    
+
     return (
 
         <div className="posts">

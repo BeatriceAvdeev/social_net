@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let car = {
+            brend: "BMW",
+            model: "x6",
+            color: "pink",
+            sayColor() {
+                console.log(this.color);
+
+            }
+        }
+        car.sayColor()
+
+        let page = {
+            _content: "",
+            setContent(content) {
+                this._content = content
+            },
+
+            getContent() {
+                document.querySelector("body").innerHTML = this._content
+            }
+        }
+
+        page.setContent("<p>hello world</p>")
+        page.setContent("<h1>bye bye</h1>")
+        page.getContent()
+
+    </script>
+</body>
+
+</html>
