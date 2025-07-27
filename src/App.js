@@ -17,9 +17,9 @@ function App(props) {
         <NavBar />
         <div className='content'>
           <Routes>
-            <Route index element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} onPostChange={props.onPostChange} />} />
-            <Route path="profile" element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} onPostChange={props.onPostChange}/>} />
-            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} addMessage={props.addMessage} onMessageChange={props.onMessageChange} />} />
+            <Route index element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
+            <Route path="profile" element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
+            <Route path="messages" element={<Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch} />} />
           </Routes>
         </div>
       </BrowserRouter>

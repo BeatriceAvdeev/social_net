@@ -25,39 +25,35 @@ let store = {
     subscribe(observer) {
         this.rerenderTree = observer
     },
-    addPost(postText) {
-        let postsText = this._state.profilePage.postsText
-        let newPost = {
-            name: "John Dow",
-            message: postText,
-            id: postsText.length + 1,
-            likes: 9
+    dispatch(action) {
+        if (action.type == "ADD-POST") {
+            let postsText = this._state.profilePage.postsText
+            let newPost = {
+                name: "John Dow",
+                message: action.text,
+                id: postsText.length + 1,
+                likes: 9
+            }
+            postsText.unshift(newPost)
+            this._state.profilePage.newPostText = ""
+        } else if (action.type == "POST-CHANGE") {
+            this._state.profilePage.newPostText = action.text
+        } else if (action.type == "MESSAGE-CHANGE") {
+            this._state.messagesPage.newMessageText = action.text
+        } else if (action.type == "ADD-MESSAGE") {
+            let messagesText = this._state.messagesPage.messagesText
+            let newMessage = {
+                name: "John Dow",
+                message: action.text,
+                id: messagesText.length + 1
+            }
+            messagesText.unshift(newMessage)
+            this._state.messagesPage.newMessageText = ""
         }
-        postsText.unshift(newPost)
-        this._state.profilePage.newPostText = ""
-        this.rerenderTree(this._state)
-    },
-    onPostChange(text) {
-        this._state.profilePage.newPostText = text
-        this.rerenderTree(this._state)
-    },
-    onMessageChange(text) {
-        this._state.messagesPage.newMessageText = text
-        this.rerenderTree(this._state)
-    },
-    addMessage(messageText) {
-        let messagesText = this._state.messagesPage.messagesText
-        let newMessage = {
-            name: "John Dow",
-            message: messageText,
-            id: messagesText.length + 1
-        }
-        messagesText.unshift(newMessage)
-        this._state.messagesPage.newMessageText = ""
         this.rerenderTree(this._state)
     },
 
-    getState(){
+    getState() {
         return this._state
     }
 }

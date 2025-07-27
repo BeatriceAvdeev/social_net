@@ -13,10 +13,7 @@ let rerenderTree = (state) => {
     <React.StrictMode>
       <App
         state={state}
-        addPost={store.addPost.bind(store)} 
-        addMessage={store.addMessage.bind(store)} 
-        onPostChange={store.onPostChange.bind(store)} 
-        onMessageChange={store.onMessageChange.bind(store)} />
+        dispatch={store.dispatch.bind(store)} />
     </React.StrictMode>
   );
 }

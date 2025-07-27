@@ -5,11 +5,11 @@ import { createRef } from "react";
 let messageText = createRef()
 function Messages(props) {
     let addMessage = () => {
-        props.addMessage(messageText.current.value)
+        props.dispatch({type:"ADD-MESSAGE", text:messageText.current.value})
         messageText.current.value = ""
     }
     let onMessageChange = () => {
-        props.onMessageChange(messageText.current.value)
+        props.dispatch({type:"MESSAGE-CHANGE", text:messageText.current.value})
     }
 
     return (
