@@ -1,15 +1,16 @@
 import "./messages.css"
 import Message from "../Message/Massage";
 import { createRef } from "react";
+import { addMessageAC,onMessageChangeAC } from "../../Data/state";
 
 let messageText = createRef()
 function Messages(props) {
     let addMessage = () => {
-        props.dispatch({type:"ADD-MESSAGE"})
+        props.dispatch(addMessageAC())
         messageText.current.value = ""
     }
     let onMessageChange = () => {
-        props.dispatch({type:"MESSAGE-CHANGE", text:messageText.current.value})
+        props.dispatch(onMessageChangeAC(messageText.current.value))
     }
 
     return (

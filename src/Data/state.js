@@ -79,4 +79,17 @@ export let onPostChangeAC = (text) => {
     }
 }
 
+export let addMessageAC = () => {
+   return {
+        type: "ADD-MESSAGE"
+    }
+}
+
+export let onMessageChangeAC = (text) => {
+    return {
+         type: "MESSAGE-CHANGE", 
+         text: text
+    }
+}
+
 window.state = store._state
