@@ -1,17 +1,18 @@
 import React from "react";
 import "./posts.css"
 import Post from "../Post/Post";
+import { addPostAC,onPostChangeAC } from "../../Data/state";
 
 let postText = React.createRef()
 
 
 function Posts(props) {
     let addPost = () => {
-        props.dispatch({ type: "ADD-POST", text: postText.current.value })
+        props.dispatch(addPostAC())
         postText.current.value = ""
     }
     let onPostChange = () => {
-        props.dispatch({ type: "POST-CHANGE", text: postText.current.value })
+        props.dispatch(onPostChangeAC(postText.current.value))
     }
 
     return (
@@ -23,5 +24,4 @@ function Posts(props) {
         </div>
     )
 }
-
-export default Posts;       
+export default Posts;

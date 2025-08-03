@@ -5,7 +5,7 @@ import { createRef } from "react";
 let messageText = createRef()
 function Messages(props) {
     let addMessage = () => {
-        props.dispatch({type:"ADD-MESSAGE", text:messageText.current.value})
+        props.dispatch({type:"ADD-MESSAGE"})
         messageText.current.value = ""
     }
     let onMessageChange = () => {
