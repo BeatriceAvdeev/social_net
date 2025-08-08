@@ -1,7 +1,7 @@
 import React from "react";
 import "./posts.css"
 import Post from "../Post/Post";
-import { addPostAC,onPostChangeAC } from "../../Data/state";
+import { addPostAC, onPostChangeAC } from "../../Data/profileReducer";
 
 let postText = React.createRef()
 

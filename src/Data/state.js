@@ -1,7 +1,6 @@
-const ADD_POST = "ADD-POST"
-const POST_CHANGE = "POST-CHANGE"
-const MESSAGE_CHANGE = "MESSAGE-CHANGE"
-const ADD_MESSAGE = "ADD-MESSAGE"
+import profileReducer from "./profileReducer";
+import messagesReducer from "./messagesReducer";
+
 
 let store = {
     _state: {
@@ -31,65 +30,17 @@ let store = {
         this.rerenderTree = observer
     },
     dispatch(action) {
-        if (action.type == ADD_POST) {
-            let postsText = this._state.profilePage.postsText
-            let newPost = {
-                name: "John Dow",
-                message: this._state.profilePage.newPostText,
-                id: postsText.length + 1,
-                likes: 9
-            }
-            postsText.unshift(newPost)
-            this._state.profilePage.newPostText = ""
-        } else if (action.type == POST_CHANGE) {
-            this._state.profilePage.newPostText = action.text
-        } else if (action.type == MESSAGE_CHANGE) {
-            this._state.messagesPage.newMessageText = action.text
-        } else if (action.type == ADD_MESSAGE) {
-            let messagesText = this._state.messagesPage.messagesText
-            let newMessage = {
-                name: "John Dow",
-                message: this._state.messagesPage.newMessageText,
-                id: messagesText.length + 1
-            }
-            messagesText.unshift(newMessage)
-            this._state.messagesPage.newMessageText = ""
-        }
+        this._state.profilePage = profileReducer(action, this._state.profilePage)
+        this._state.messagesPage = messagesReducer(action, this._state.messagesPage)
         this.rerenderTree(this._state)
     },
+
 
     getState() {
         return this._state
     }
 }
 
-
-
 export default store
-
-export let addPostAC = () => {
-    return {
-        type: "ADD-POST"
-    }
-}
-export let onPostChangeAC = (text) => {
-    return {
-        type: "POST-CHANGE",
-        text: text
-    }
-}
-
-export let addMessageAC = () => {
-   return {
-        type: "ADD-MESSAGE"
-    }
-}
-
-export let onMessageChangeAC = (text) => {
-    return {
-         type: "MESSAGE-CHANGE", 
-         text: text
-    }
-}
 
 window.state = store._state

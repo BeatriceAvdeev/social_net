@@ -1,7 +1,7 @@
 import "./messages.css"
 import Message from "../Message/Massage";
 import { createRef } from "react";
-import { addMessageAC,onMessageChangeAC } from "../../Data/state";
+import { addMessageAC, onMessageChangeAC } from "../../Data/messagesReducer";
 
 let messageText = createRef()
 function Messages(props) {
