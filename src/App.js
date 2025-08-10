@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router';
 
 
 function App(props) {
+  console.log(props);
   
   return (
     <div className='wrapper'>
